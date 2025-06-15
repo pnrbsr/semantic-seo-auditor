@@ -117,7 +117,7 @@ export default function ClusteringPage() {
             <ul>
               {Object.entries(clusterKeywords).map(([cid, keywords]) => (
                 <li key={cid}>
-                  <b>Cluster {cid}:</b> {keywords.join(', ')}
+                  <b>Cluster {cid}:</b> {(keywords as string[]).join(', ')}
                 </li>
               ))}
             </ul>
