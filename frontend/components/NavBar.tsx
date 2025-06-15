@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { usePathname } from 'next/navigation';
 
 const navStyle: React.CSSProperties = {
   display: 'flex',
@@ -27,7 +27,7 @@ const activeStyle: React.CSSProperties = {
 };
 
 export default function NavBar() {
-  const router = useRouter();
+  const pathname = usePathname();
   const links = [
     { href: '/', label: 'Home' },
     { href: '/clustering', label: 'Clustering' },
@@ -46,7 +46,7 @@ export default function NavBar() {
           href={link.href}
           style={{
             ...linkStyle,
-            ...(router.pathname === link.href ? activeStyle : {}),
+            ...(pathname === link.href ? activeStyle : {}),
           }}
         >
           {link.label}
@@ -54,4 +54,4 @@ export default function NavBar() {
       ))}
     </nav>
   );
-} 
+}
