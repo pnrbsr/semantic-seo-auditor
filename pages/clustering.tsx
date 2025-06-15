@@ -115,11 +115,11 @@ export default function ClusteringPage() {
           <div style={{ marginTop: 24 }}>
             <h3>Cluster Keywords</h3>
             <ul>
-            {Object.entries(clusterKeywords).map(([cid, keywords]) => (
-            <li key={cid}>
-            <b>Cluster {cid}:</b> {(keywords as string[]).join(', ')}
-            </li>
-            ))}
+              {Object.entries(clusterKeywords).map(([cid, keywords]) => (
+                <li key={cid}>
+                  <b>Cluster {cid}:</b> {(keywords as string[]).join(', ')}
+                </li>
+              ))}
             </ul>
           </div>
           {selectedCluster && (
